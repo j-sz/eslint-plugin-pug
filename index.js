@@ -7,8 +7,8 @@ var walkExtract = require('pug-walk-extract-text')
 var extractions = []
 
 function isValidScript (node) {
-	return node.type === 'Tag' && node.name === 'script'
-		&& node.attrs.filter(function (attr) { return attr.val.replace(/['"]/g, '') !== 'text/javascript' }).length <= 0
+        return node.type === 'Tag' && node.name === 'script'
+                && node.attrs.filter(function (attr) { return attr.val !== 'text/javascript' }).length <= 0
 }
 
 var pugProcessor = {
